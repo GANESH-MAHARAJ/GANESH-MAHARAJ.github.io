@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ganesh Maharaj Kamatham | Comprehensive Academic Research Portfolio V2</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3b82f6", // Brighter Blue for Cyberpunk feel
+                        secondary: "#8b5cf6", // Violet accent
+                        "academic-dark": "#0f172a",
+                        "background-light": "#fdfdfd",
+                        "background-dark": "#020617", // Deeper dark
+                    },
+                    fontFamily: {
+                        display: ["Crimson Pro", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.375rem",
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Styles -->
+    <style type="text/tailwindcss">
+        /* Base Landscape */
+        html, body {
+            overflow-x: hidden;
+        }
+        
+        #progress-bar {
+            @apply fixed top-0 left-0 h-1 bg-primary z-[100] w-0 transition-all duration-100 ease-out shadow-[0_0_10px_rgba(59,130,246,0.7)];
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Gradient Fallback */
+            background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            @apply bg-white/10 dark:bg-slate-900/40 backdrop-blur-lg border border-white/20 dark:border-slate-700/50 shadow-xl;
+        }
+        
+        .glass-card {
+            @apply glass-panel rounded-xl p-6 transition-all duration-500 hover:border-primary/50 hover:shadow-primary/20 hover:-translate-y-1 h-full flex flex-col;
+        }
+
+        .section-heading {
+            @apply font-display text-4xl font-bold text-slate-900 dark:text-white mb-12 flex items-center gap-6 pt-20 -mt-20;
+        }
+
+        .academic-border {
+            border-left: 2px solid #3b82f6;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb; 
+        }
+        /* Cert Card Restore */
+        .cert-card {
+            @apply glass-panel flex items-center gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-white/5 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] h-full;
+        }
+
+        /* Active Navigation Link */
+        .nav-link-active {
+            @apply text-primary border-primary;
+        }
+
+        /* Cyberpunk Glitch Effect */
+        .glitch-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .glitch {
+            position: relative;
+            color: white;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(2px, 9999px, 86px, 0); transform: skew(0.5deg); }
+            5% { clip: rect(66px, 9999px, 3px, 0); transform: skew(0.5deg); }
+            10% { clip: rect(29px, 9999px, 86px, 0); transform: skew(0.5deg); }
+            15% { clip: rect(96px, 9999px, 80px, 0); transform: skew(0.5deg); }
+            20% { clip: rect(65px, 9999px, 14px, 0); transform: skew(0.5deg); }
+            25% { clip: rect(83px, 9999px, 33px, 0); transform: skew(0.5deg); }
+            30% { clip: rect(32px, 9999px, 5px, 0); transform: skew(0.5deg); }
+            35% { clip: rect(15px, 9999px, 63px, 0); transform: skew(0.5deg); }
+            40% { clip: rect(47px, 9999px, 3px, 0); transform: skew(0.5deg); }
+            45% { clip: rect(39px, 9999px, 96px, 0); transform: skew(0.5deg); }
+            50% { clip: rect(56px, 9999px, 31px, 0); transform: skew(0.5deg); }
+            55% { clip: rect(83px, 9999px, 69px, 0); transform: skew(0.5deg); }
+            60% { clip: rect(2px, 9999px, 7px, 0); transform: skew(0.5deg); }
+            65% { clip: rect(41px, 9999px, 16px, 0); transform: skew(0.5deg); }
+            70% { clip: rect(48px, 9999px, 99px, 0); transform: skew(0.5deg); }
+            75% { clip: rect(79px, 9999px, 49px, 0); transform: skew(0.5deg); }
+            80% { clip: rect(98px, 9999px, 20px, 0); transform: skew(0.5deg); }
+            85% { clip: rect(7px, 9999px, 63px, 0); transform: skew(0.5deg); }
+            90% { clip: rect(48px, 9999px, 55px, 0); transform: skew(0.5deg); }
+            95% { clip: rect(81px, 9999px, 0px, 0); transform: skew(0.5deg); }
+            100% { clip: rect(4px, 9999px, 91px, 0); transform: skew(0.5deg); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(62px, 9999px, 65px, 0); transform: skew(0.5deg); }
+            5% { clip: rect(31px, 9999px, 36px, 0); transform: skew(0.5deg); }
+            10% { clip: rect(91px, 9999px, 2px, 0); transform: skew(0.5deg); }
+            15% { clip: rect(84px, 9999px, 11px, 0); transform: skew(0.5deg); }
+            20% { clip: rect(6px, 9999px, 8px, 0); transform: skew(0.5deg); }
+            25% { clip: rect(44px, 9999px, 78px, 0); transform: skew(0.5deg); }
+            30% { clip: rect(22px, 9999px, 12px, 0); transform: skew(0.5deg); }
+            35% { clip: rect(2px, 9999px, 17px, 0); transform: skew(0.5deg); }
+            40% { clip: rect(49px, 9999px, 93px, 0); transform: skew(0.5deg); }
+            45% { clip: rect(84px, 9999px, 83px, 0); transform: skew(0.5deg); }
+            50% { clip: rect(77px, 9999px, 66px, 0); transform: skew(0.5deg); }
+            55% { clip: rect(54px, 9999px, 39px, 0); transform: skew(0.5deg); }
+            60% { clip: rect(70px, 9999px, 15px, 0); transform: skew(0.5deg); }
+            65% { clip: rect(100px, 9999px, 90px, 0); transform: skew(0.5deg); }
+            70% { clip: rect(70px, 9999px, 62px, 0); transform: skew(0.5deg); }
+            75% { clip: rect(71px, 9999px, 83px, 0); transform: skew(0.5deg); }
+            80% { clip: rect(49px, 9999px, 57px, 0); transform: skew(0.5deg); }
+            85% { clip: rect(73px, 9999px, 66px, 0); transform: skew(0.5deg); }
+            90% { clip: rect(36px, 9999px, 64px, 0); transform: skew(0.5deg); }
+            95% { clip: rect(11px, 9999px, 81px, 0); transform: skew(0.5deg); }
+            100% { clip: rect(16px, 9999px, 65px, 0); transform: skew(0.5deg); }
+        }
+    </style>
+
+    <!-- Three.js & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- GSAP Text Plugin for Typewriter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    
+    <!-- Lenis for Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <style>
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        /* Cursor Fix: Hide default cursor globally and on interactive elements */
+        html, body, a, button, input, select, textarea, .cursor-none *, .magnetic-btn {
+            cursor: none !important;
+        }
+
+        .cursor-dot {
+            width: 32px;
+            height: 32px;
+            background-color: #3b82f6;
+            clip-path: polygon(0 0, 100% 25%, 45% 45%, 25% 100%);
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background-color: #020617;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Animated Gradient Border using @property */
+        @property --border-angle {
+            syntax: "<angle>";
+            inherits: false;
+            initial-value: 0deg;
+        }
+
+        .gradient-border-card {
+            position: relative;
+            background: rgba(15, 23, 42, 0.6); 
+            border-radius: 0.75rem; 
+            z-index: 1;
+        }
+
+        .gradient-border-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit; 
+            padding: 1.5px; /* Border width */
+            
+            /* Gradient */
+            background: conic-gradient(
+                from var(--border-angle), 
+                transparent 20%, 
+                #3b82f6 50%, 
+                transparent 80%
+            );
+            
+            /* Animation */
+            animation: rotate-border-angle 4s linear infinite;
+            
+            /* Masking - Strict Order */
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        @keyframes rotate-border-angle {
+            to { --border-angle: 360deg; }
+        }
+
+        /* Grain Overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9998; /* Below cursor, above everything else */
+            pointer-events: none;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Lenis Recommended CSS */
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important; /* Force auto to let Lenis handle it */
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300 dark cursor-none">
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="text-green-500 text-sm md:text-base">
+            <span id="terminal-line"></span><span class="animate-pulse">_</span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+    
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <!-- 3D Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Floating CV Button -->
+    <a class="fixed bottom-8 right-8 z-[100] flex items-center justify-center bg-academic-dark dark:bg-primary text-white rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] hover:scale-110 active:scale-95 transition-all duration-300 group w-14 h-14 overflow-hidden" 
+       download="Ganesh_Kamatham_CV.pdf" 
+       href="https://drive.google.com/file/d/11r0-8m0mG0ivElnT-ENyBlFIWIdlBTri/view?usp=sharing"
+       target="_blank"
+       title="Download Full CV">
+        <div class="relative flex items-center justify-center w-full h-full">
+            <span class="material-symbols-outlined text-2xl transition-transform duration-300 group-hover:-translate-y-8">download</span>
+            <span class="absolute text-[10px] font-bold uppercase tracking-widest translate-y-8 group-hover:translate-y-0 transition-transform duration-300">CV</span>
+        </div>
+    </a>
+<nav class="fixed top-0 w-full z-50 glass-panel border-b-0">
+<div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+<a class="font-display text-xl font-bold tracking-tight text-primary hover:opacity-80 transition-opacity" href="#about">G.M.K.</a>
+<div class="hidden md:flex space-x-8 text-[11px] font-semibold uppercase tracking-[0.15em] font-sans">
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#research">Research</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#experience">Experience</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#projects">Projects</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#skills">Skills</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#education">Education</a>
+</div>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-6 py-12 lg:py-16">
+<section class="mb-32 pt-20" id="about">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="flex-1" id="hero-content">
+<h1 class="font-display text-5xl md:text-7xl font-bold text-slate-900 dark:text-white leading-tight mb-4">
+                    Ganesh Maharaj <span class="text-primary inline-block glitch-wrapper"><span class="glitch" data-text="Kamatham">Kamatham</span></span>
+</h1>
+<p class="text-xl md:text-2xl font-light text-slate-600 dark:text-slate-400 font-display italic" id="typewriter-text">
+                    B.Tech Computer Science (Data Science)
+                </p>
+<div class="mt-8 flex flex-wrap gap-4 items-center">
+<a class="magnetic-btn flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded hover:opacity-90 transition-opacity text-sm font-medium" href="mailto:ganeshmaharaj.kamatham@gmail.com">
+<span class="material-symbols-outlined text-lg">mail</span>
+<span>Contact</span>
+</a>
+<a class="magnetic-btn flex items-center gap-2 px-5 py-2.5 border border-slate-300 dark:border-slate-700 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-sm font-medium" href="https://github.com/GANESH-MAHARAJ" target="_blank" rel="noopener noreferrer">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405 1.02 0 2.04.135 3 .405 2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+<span>GitHub</span>
+</a>
+<a class="magnetic-btn flex items-center gap-2 px-5 py-2.5 border border-slate-300 dark:border-slate-700 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-sm font-medium" href="https://linkedin.com/in/ganesh-maharaj-kamatham-4b38a6310" target="_blank" rel="noopener noreferrer">
+<svg class="w-5 h-5 fill-current text-[#0a66c2] dark:text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+<span>LinkedIn</span>
+</a>
+</div>
+</div>
+<div class="hidden md:block text-right pb-2">
+<p class="text-[10px] font-mono text-slate-500 uppercase tracking-[0.2em] mb-1">Affiliation</p>
+<p class="font-medium text-sm">Vellore Institute of Technology</p>
+<p class="text-slate-400 text-xs">Vellore, Tamil Nadu, India</p>
+</div>
+</div>
+<div class="mt-16 glass-panel p-8 rounded-2xl relative overflow-hidden group">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<h2 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Research Interests</h2>
+<p class="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed font-display">
+                Machine Learning, Deep Learning Architectures, Data Science, Large Language Models (LLMs), Multimodal Learning, Intelligent Automation Systems, Semantic Information Extraction, and Applied AI for Scientific and Industrial Applications.
+            </p>
+</div>
+</section>
+<section class="mb-24" id="research">
+<h2 class="section-heading">
+            Research, Publications &amp; Patents
+            <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<div class="glass-card group relative">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 rounded">Submitted</span>
+<span class="text-[10px] font-mono text-slate-400">Jan 2026</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors font-display">PAMOT: Product and time-Aware Modeling of Online reviews with Transformers</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    Manuscript submitted for review. Focuses on custom deep learning blocks for modeling structured review datasets and representation learning.
+                </p>
+<div class="flex gap-2">
+<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">Transformers</span>
+<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">NLP</span>
+</div>
+</div>
+<div class="glass-card group relative">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-400 rounded">In Preparation</span>
+<span class="text-[10px] font-mono text-slate-400">2026</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors font-display">Brain Tumor Classification using Deep Learning on Multi-Modal MRI Data</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    Research utilizing T1, T2, and T1c+ MRI data sequences for enhanced classification accuracy.
+                </p>
+<div class="flex gap-2">
+<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">Medical AI</span>
+<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">Deep Learning</span>
+</div>
+</div>
+<div class="glass-card group relative md:col-span-2">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 rounded">Published Patent</span>
+<span class="text-[10px] font-mono text-slate-400">#202541052566</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors font-display">A method and a system for dynamically managing thermal conditions in a data center using zone-based AI-driven control</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                   A novel system utilizing AI-driven control logic for efficient thermal management in data centers, optimizing cooling based on zone-specific requirements.
+                </p>
+<div class="flex gap-2">
+<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">AI Control</span>
+<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">Data Centers</span>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-24" id="experience">
+<h2 class="section-heading">
+            Professional Experience
+            <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="space-y-12">
+<div class="academic-border pl-8 relative">
+<div class="absolute -left-[4px] top-0 w-2 h-2 rounded-full bg-primary"></div>
+<div class="flex flex-col md:flex-row md:justify-between items-baseline gap-2 mb-3">
+<h3 class="text-2xl font-bold font-display text-slate-900 dark:text-white">Research Intern | DRDO – SSPL Lab</h3>
+<span class="text-xs font-mono text-slate-500 uppercase bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">May 2025 – Jul 2025</span>
+</div>
+<p class="text-primary font-medium mb-4 text-sm tracking-wide">Solid State Physics Laboratory • New Delhi, India</p>
+<div class="flex gap-4 mb-4">
+<a class="flex items-center gap-1 text-slate-500 hover:text-primary transition-colors text-xs font-mono" href="https://github.com/GANESH-MAHARAJ/AUTOMATED_RF_DEVICE_TESTING_SOFTWARE" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>Code</span>
+</a>
+<a class="flex items-center gap-1 text-slate-500 hover:text-primary transition-colors text-xs font-mono" href="https://github.com/GANESH-MAHARAJ/AUTOMATED_RF_DEVICE_TESTING_SOFTWARE/blob/main/SSPL_PROJECT_REPORT.pdf" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">description</span>
+<span>Report</span>
+</a>
+</div>
+<ul class="space-y-3 text-slate-700 dark:text-slate-300 text-sm leading-relaxed max-w-4xl">
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold mt-1">/</span>
+<span>Designed and implemented end-to-end automation pipelines for RF Power Sweep and I–V Characterization of semiconductor and RF devices.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold mt-1">/</span>
+<span>Integrated multiple laboratory instruments using Python, PyVISA, and GPIB protocols to enable synchronized measurement execution.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold mt-1">/</span>
+<span>Structured experimental workflows to ensure repeatability, parameter traceability, and consistent data acquisition across test runs.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold mt-1">/</span>
+<span>Conducted parallel research on semantic document understanding for internal technical reports and scientific PDFs, focusing on metadata extraction, semantic indexing, and retrieval-oriented pipelines.</span>
+</li>
+</ul>
+</div>
+<div class="academic-border pl-8 relative">
+<div class="absolute -left-[4px] top-0 w-2 h-2 rounded-full bg-primary"></div>
+<div class="flex flex-col md:flex-row md:justify-between items-baseline gap-2 mb-3">
+<h3 class="text-2xl font-bold font-display text-slate-900 dark:text-white">Self-Directed Research in Applied AI and LLM Systems</h3>
+<span class="text-xs font-mono text-slate-500 uppercase bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">2024 – Present</span>
+</div>
+<p class="text-primary font-medium mb-4 text-sm tracking-wide">Independent Research Experience</p>
+<ul class="space-y-3 text-slate-700 dark:text-slate-300 text-sm leading-relaxed max-w-4xl">
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold mt-1">/</span>
+<span>Conducted independent exploration of transformer-based architectures for semantic retrieval, reasoning, and document understanding tasks.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold mt-1">/</span>
+<span>Designed and evaluated embedding-based pipelines for similarity search, clustering, and retrieval-augmented generation (RAG).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold mt-1">/</span>
+<span>Experimented with prompt strategies, agent workflows, and tool-using LLM systems using LangChain and locally hosted models.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold mt-1">/</span>
+<span>Practiced research-oriented experimentation: dataset preprocessing, controlled comparisons, ablation-style testing, and qualitative error analysis.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-24" id="projects">
+<h2 class="section-heading">
+            Projects
+            <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="glass-card group h-full flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">ac_unit</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://github.com/GANESH-MAHARAJ/AI-Assisted-Adaptive-Cold-Storage" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">link</span></a>
+</div>
+<h3 class="text-xl font-bold mb-3 font-display">AI-Assisted Adaptive Cold Storage System</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
+                    Formulated a multi-zone cold storage optimization problem. Designed a sensor-driven feedback system with adaptive control logic. Integrated LLM-based agent pipelines (LangChain + Ollama) for control recommendations.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">LangChain</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">Ollama</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">Flask</span>
+</div>
+</div>
+<div class="glass-card group h-full flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">article</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://github.com/GANESH-MAHARAJ/AI-Assisted_Content_Managemet_System" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">link</span></a>
+</div>
+<h3 class="text-xl font-bold mb-3 font-display">AI-Assisted Content Management System</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
+                    Designed a semantic document processing pipeline for large-scale scientific PDF collections (20,000+ docs). Implemented embedding-based vector search and structured metadata extraction.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">RAG</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">Embeddings</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">Schema-based Extraction</span>
+</div>
+</div>
+<div class="glass-card group h-full flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">chat</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://github.com/GANESH-MAHARAJ/Foundations-of-DS/tree/main/DA2" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">link</span></a>
+</div>
+<h3 class="text-xl font-bold mb-3 font-display">Movie Recommendation Chatbot (RASA + LLM)</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
+                    Developed a domain-specific chatbot using RASA NLU for intent recognition. Integrated LangChain-based LLM fallback for handling complex conversational queries.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">RASA</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">LangChain</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">React</span>
+</div>
+</div>
+<div class="glass-card group h-full flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">security</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://github.com/GANESH-MAHARAJ/INNOVACT25_AI_Surveillance" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">link</span></a>
+</div>
+<h3 class="text-xl font-bold mb-3 font-display">AI Surveillance System (Hackathon Project)</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
+                    Designed an AI-powered surveillance pipeline for real-time threat detection and analytics. Implemented object and person detection using YOLO-based deep learning models.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">YOLO</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">MERN Stack</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">REST APIs</span>
+</div>
+</div>
+<div class="glass-card group h-full flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">rocket_launch</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://github.com/GANESH-MAHARAJ/Applied-DataScience-Capstone" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">link</span></a>
+</div>
+<h3 class="text-xl font-bold mb-3 font-display">Falcon 9 Landing Prediction</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
+                    Capstone project for IBM Data Science Professional. End-to-end pipeline including data scraping, SQL processing, EDA, and ML classification model comparison to predict first-stage landings.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">Pandas</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">Folium</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded">Scikit-Learn</span>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-24" id="hackathons">
+<h2 class="section-heading">
+            Hackathons Participated
+            <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">code</span>
+<span class="text-[10px] font-mono text-slate-400">Feb 2025</span>
+</div>
+<h3 class="text-lg font-bold mb-2 font-display group-hover:text-primary transition-colors">Yantra Hackathon 2025</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Yantra Central Hackathon conducted during Yantra 2025 Technical Fest at VIT Vellore.
+                </p>
+</div>
+<div class="ml-auto mt-4 flex gap-3">
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1zg4Med7cSP2Nc4aGFZo7sdESgC2vufym/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="View Certificate">
+<span class="material-symbols-outlined">link</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://github.com/GANESH-MAHARAJ/Yantra-Adaptive-Server-Cooling" target="_blank" rel="noopener noreferrer" title="View Code">
+<span class="material-symbols-outlined">code</span>
+</a>
+</div>
+</div>
+<div class="glass-card h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">lightbulb</span>
+<span class="text-[10px] font-mono text-slate-400">Aug 2025</span>
+</div>
+<h3 class="text-lg font-bold mb-2 font-display group-hover:text-primary transition-colors">InnovAct 2025 Hackathon</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Organized by Institution's Innovation Council (IIC) as part of World Entrepreneurship Day at VIT, Vellore.
+                </p>
+</div>
+<a class="ml-auto text-slate-400 hover:text-primary transition-colors mt-4" href="https://drive.google.com/file/d/1ZcOxXkYdF0N7s7-PnNrq8MW-XK3Vrvmg/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+<div class="glass-card h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">hub</span>
+<span class="text-[10px] font-mono text-slate-400">2025</span>
+</div>
+<h3 class="text-lg font-bold mb-2 font-display group-hover:text-primary transition-colors">Honeywell Campus Connect</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Participated in Honeywell Campus Connect Hackathon 2025.
+                </p>
+</div>
+<a class="ml-auto text-slate-400 hover:text-primary transition-colors mt-4" href="https://github.com/GANESH-MAHARAJ/HoneyWell_HACK_AI" target="_blank" rel="noopener noreferrer" title="View Code">
+<span class="material-symbols-outlined">code</span>
+</a>
+</div>
+</div>
+</section>
+<section class="mb-24" id="skills">
+<h2 class="section-heading">
+            Technical Proficiency
+            <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card h-full flex flex-col">
+<h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-4">Programming</h3>
+<ul class="space-y-2 text-sm font-mono">
+<li>Python</li>
+<li>R</li>
+<li>C / C++</li>
+<li>Java</li>
+<li>JavaScript</li>
+<li>SQL</li>
+</ul>
+</div>
+<div class="glass-card h-full flex flex-col">
+<h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-4">Machine Learning</h3>
+<ul class="space-y-2 text-sm font-mono">
+<li>PyTorch</li>
+<li>TensorFlow / Keras</li>
+<li>scikit-learn</li>
+<li>HuggingFace</li>
+<li>Transformers</li>
+</ul>
+</div>
+<div class="glass-card h-full flex flex-col">
+<h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-4">LLM Systems</h3>
+<ul class="space-y-2 text-sm font-mono">
+<li>LangChain</li>
+<li>Ollama</li>
+<li>Semantic Search</li>
+<li>Embeddings</li>
+<li>Vector Databases</li>
+</ul>
+</div>
+<div class="glass-card h-full flex flex-col">
+<h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-4">Backend &amp; Tools</h3>
+<ul class="space-y-2 text-sm font-mono">
+<li>Flask / FastAPI</li>
+<li>MongoDB</li>
+<li>Git / GitHub</li>
+<li>PyVISA</li>
+<li>Linux / Windows</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-24" id="education">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<h2 class="section-heading">
+                    Education
+                    <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="relative pl-8 border-l border-slate-200 dark:border-slate-800 py-2">
+<div class="absolute -left-[5px] top-4 w-2 h-2 rounded-full bg-primary"></div>
+<h3 class="text-xl font-bold font-display">B.Tech in Computer Science (Data Science)</h3>
+<p class="text-primary font-medium mt-1 italic">Vellore Institute of Technology (VIT), Vellore</p>
+<p class="text-xs text-slate-500 mt-2 uppercase font-mono tracking-tight">Aug 2022 – May 2026 (Expected)</p>
+<div class="mt-6 p-6 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-100 dark:border-slate-800">
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-3xl font-bold text-primary font-display">9.31</span>
+<span class="text-slate-400 font-mono text-xs">/ 10.0 CGPA</span>
+</div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Relevant Coursework</h4>
+<div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600 dark:text-slate-400">
+<span>• Data Science</span>
+<span>• Machine Learning</span>
+<span>• Deep Learning</span>
+<span>• Artificial Intelligence</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="section-heading">
+                    Certifications
+                    <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="flex flex-wrap justify-center gap-6">
+<div class="cert-card w-full sm:w-80 shrink-0 h-full">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div>
+<p class="font-bold text-xs text-slate-900 dark:text-slate-100">Deep Learning Specialization</p>
+<p class="text-[10px] text-slate-400 font-mono mt-0.5">DeepLearning.AI</p>
+</div>
+<a class="ml-auto text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1E0YUDmIEWLJSrOA1TqCAlKcc3Z8o_mKm/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+<div class="cert-card w-full sm:w-80 shrink-0 h-full">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div>
+<p class="font-bold text-xs text-slate-900 dark:text-slate-100">IBM Data Science Professional</p>
+<p class="text-[10px] text-slate-400 font-mono mt-0.5">IBM</p>
+</div>
+<a class="ml-auto text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1l8iCk6UX0TmOaUo6zgBz8vKh2D0DhZpf/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+<div class="cert-card w-full sm:w-80 shrink-0 h-full">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div>
+<p class="font-bold text-xs text-slate-900 dark:text-slate-100">Associate Data Scientist</p>
+<p class="text-[10px] text-slate-400 font-mono mt-0.5">DataCamp (DS601P)</p>
+</div>
+<a class="ml-auto text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1FkgBLIdF1gAK4Pad0uyTOeHcN50ly3MS/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+<div class="cert-card w-full sm:w-80 shrink-0 h-full">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div>
+<p class="font-bold text-xs text-slate-900 dark:text-slate-100">OCI GenAI Professional</p>
+<p class="text-[10px] text-slate-400 font-mono mt-0.5">Oracle (1Z0-1127-25)</p>
+</div>
+<a class="ml-auto text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1dKMSx6z-VUvL3apJAXQiKpoON38uEHma/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+<div class="cert-card w-full sm:w-80 shrink-0 h-full">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div>
+<p class="font-bold text-xs text-slate-900 dark:text-slate-100">OCI AI Foundations Associate</p>
+<p class="text-[10px] text-slate-400 font-mono mt-0.5">Oracle (1Z0-1122-25)</p>
+</div>
+<a class="ml-auto text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1AiE174EnQpibswg0mKnBO1rGUHMwmsN6/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-slate-800 py-16 bg-slate-900/80 backdrop-blur-sm mt-24">
+<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<p class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">Ganesh Maharaj Kamatham</p>
+<p class="text-xs text-slate-500 uppercase tracking-widest font-mono">Academic &amp; Research Portfolio • 2025 Edition</p>
+</div>
+<div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+<a class="hover:text-primary transition-colors" href="https://github.com/GANESH-MAHARAJ" target="_blank">GitHub</a>
+<a class="hover:text-primary transition-colors" href="https://linkedin.com/in/ganesh-maharaj-kamatham-4b38a6310" target="_blank">LinkedIn</a>
+<a class="hover:text-primary transition-colors" href="mailto:ganeshmaharaj.kamatham@gmail.com">Email</a>
+</div>
+</div>
+</footer>
+<!-- Logic Script -->
+<script src="script.js"></script>
+</body></html>
