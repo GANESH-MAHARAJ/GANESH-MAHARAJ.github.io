@@ -214,10 +214,10 @@
         }
 
         .cursor-dot {
-            width: 32px;
-            height: 32px;
+            width: 12px;
+            height: 12px;
             background-color: #3b82f6;
-            clip-path: polygon(0 0, 100% 25%, 45% 45%, 25% 100%);
+            border-radius: 50%;
         }
 
         .cursor-outline {
@@ -395,7 +395,7 @@
     <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <h2 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Research Interests</h2>
 <p class="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed font-display">
-                Machine Learning, Deep Learning Architectures, Data Science, Large Language Models (LLMs), Multimodal Learning, Intelligent Automation Systems, Semantic Information Extraction, and Applied AI for Scientific and Industrial Applications.
+                Machine Learning, Deep Learning Architectures, Data Science, Large Language Models (LLMs), Multimodal Learning, Intelligent Automation Systems and Applied AI for Scientific and Industrial Applications.
             </p>
 </div>
 </section>
@@ -405,9 +405,26 @@
             <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
 </h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<div class="glass-card group relative md:col-span-2">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 rounded">Published Patent</span>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-mono text-slate-400">#202541052566</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1qqVWv3zN2bFnSAwb1PTRafdEjgnZygEy/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm">link</span></a>
+</div>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors font-display">A method and a system for dynamically managing thermal conditions in a data center using zone-based AI-driven control</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                   A novel system utilizing AI-driven control logic for efficient thermal management in data centers, optimizing cooling based on zone-specific requirements.
+                </p>
+<div class="flex gap-2">
+<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">AI Control</span>
+<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">Data Centers</span>
+</div>
+</div>
 <div class="glass-card group relative">
 <div class="flex justify-between items-start mb-4">
-<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 rounded">Submitted</span>
+<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 rounded">Manuscript Submitted</span>
 <span class="text-[10px] font-mono text-slate-400">Jan 2026</span>
 </div>
 <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors font-display">PAMOT: Product and time-Aware Modeling of Online reviews with Transformers</h3>
@@ -421,7 +438,7 @@
 </div>
 <div class="glass-card group relative">
 <div class="flex justify-between items-start mb-4">
-<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-400 rounded">In Preparation</span>
+<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-400 rounded">Manuscript in Preparation</span>
 <span class="text-[10px] font-mono text-slate-400">2026</span>
 </div>
 <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors font-display">Brain Tumor Classification using Deep Learning on Multi-Modal MRI Data</h3>
@@ -431,20 +448,6 @@
 <div class="flex gap-2">
 <span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">Medical AI</span>
 <span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">Deep Learning</span>
-</div>
-</div>
-<div class="glass-card group relative md:col-span-2">
-<div class="flex justify-between items-start mb-4">
-<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 rounded">Published Patent</span>
-<span class="text-[10px] font-mono text-slate-400">#202541052566</span>
-</div>
-<h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors font-display">A method and a system for dynamically managing thermal conditions in a data center using zone-based AI-driven control</h3>
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                   A novel system utilizing AI-driven control logic for efficient thermal management in data centers, optimizing cooling based on zone-specific requirements.
-                </p>
-<div class="flex gap-2">
-<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">AI Control</span>
-<span class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 uppercase font-mono">Data Centers</span>
 </div>
 </div>
 </div>
@@ -470,6 +473,10 @@
 <a class="flex items-center gap-1 text-slate-500 hover:text-primary transition-colors text-xs font-mono" href="https://github.com/GANESH-MAHARAJ/AUTOMATED_RF_DEVICE_TESTING_SOFTWARE/blob/main/SSPL_PROJECT_REPORT.pdf" target="_blank" rel="noopener noreferrer">
 <span class="material-symbols-outlined text-sm">description</span>
 <span>Report</span>
+</a>
+<a class="flex items-center gap-1 text-slate-500 hover:text-primary transition-colors text-xs font-mono" href="https://drive.google.com/file/d/1ndhWmRzhbIBhHPuzcwvHbq7iYiLRkEVF/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Certificate</span>
 </a>
 </div>
 <ul class="space-y-3 text-slate-700 dark:text-slate-300 text-sm leading-relaxed max-w-4xl">
@@ -660,6 +667,82 @@
 </div>
 </div>
 </section>
+<section class="mb-24" id="achievements">
+<h2 class="section-heading">
+            Honors &amp; Achievements
+            <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">workspace_premium</span>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono text-slate-400">2023</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/19esGZajH9-6qYcN8BLj98X_TOXR5VIsh/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm">link</span></a>
+</div>
+</div>
+<h3 class="text-lg font-bold mb-2 font-display group-hover:text-primary transition-colors">VIT Merit Scholarship</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Awarded for consistent academic excellence and outstanding performance during the academic year 2022-23.
+                </p>
+</div>
+</div>
+<div class="glass-card h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">rocket_launch</span>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono text-slate-400">2017</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1mFzgfoK1QCFazFefSjqyF4ueCM-uo3m0/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm">link</span></a>
+</div>
+</div>
+<h3 class="text-lg font-bold mb-2 font-display group-hover:text-primary transition-colors">NASA Space Settlement Contest 2017</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Qualified for the 36th International Space Development Conference (ISDC) 2017 in St. Louis, USA.
+                </p>
+</div>
+</div>
+<div class="glass-card h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">stars</span>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono text-slate-400">2016</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/19thiECCownD7yUjeByKTbFxYlRoHprUb/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm">link</span></a>
+</div>
+</div>
+<h3 class="text-lg font-bold mb-2 font-display group-hover:text-primary transition-colors">NASA Space Settlement Contest 2016</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Awarded Honorable Mention in the annual design contest for the project "Airavatam".
+                </p>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-24" id="extracurricular">
+<h2 class="section-heading">
+            Extracurricular Activities
+            <div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">military_tech</span>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono text-slate-400">2019</span>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://drive.google.com/file/d/1HjuIx0vk7dgT4hxZszJ1I2Thk8iJ_Dey/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm">link</span></a>
+</div>
+</div>
+<h3 class="text-lg font-bold mb-2 font-display group-hover:text-primary transition-colors">National Cadet Corps (NCC)</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    Successfully completed the 'A' Certificate examination under the authority of Ministry of Defence, Government of India.
+                </p>
+</div>
+</div>
+</div>
+</section>
 <section class="mb-24" id="skills">
 <h2 class="section-heading">
             Technical Proficiency
@@ -732,6 +815,27 @@
 <span>• Machine Learning</span>
 <span>• Deep Learning</span>
 <span>• Artificial Intelligence</span>
+</div>
+</div>
+<!-- GRE Score Card -->
+<div class="mt-4 p-6 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<h4 class="text-xs font-bold uppercase tracking-widest text-slate-400">Graduate Record Examination (GRE)</h4>
+<span class="text-xl font-bold text-primary font-display">324</span>
+</div>
+<div class="grid grid-cols-3 gap-4 text-center">
+<div>
+<div class="text-lg font-bold text-slate-700 dark:text-slate-200">160</div>
+<div class="text-[10px] text-slate-400 font-mono uppercase mt-1">Verbal</div>
+</div>
+<div>
+<div class="text-lg font-bold text-slate-700 dark:text-slate-200">164</div>
+<div class="text-[10px] text-slate-400 font-mono uppercase mt-1">Quant</div>
+</div>
+<div>
+<div class="text-lg font-bold text-slate-700 dark:text-slate-200">3.5</div>
+<div class="text-[10px] text-slate-400 font-mono uppercase mt-1">AWA</div>
+</div>
 </div>
 </div>
 </div>
